@@ -1,8 +1,8 @@
-# WebArena: A Realistic Web Environment for Building Autonomous Agents
+# Safe Arena
 <p align="center">
     <img src="media/logo.png" alt="Logo" width="80px">
     <br>
-    <b>WebArena is a standalone, self-hostable web environment for building autonomous agents</b>
+    <b>Working repo for Safe Arena benchmark; everything past this point is unedited setup info from WebArena. Will update once I've got it working with SafeArena-specific setup instruction.</b>
 </p>
 
 

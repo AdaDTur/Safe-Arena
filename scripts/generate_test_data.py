@@ -1,12 +1,15 @@
 """Replace the website placeholders with website domains from env_config
 Generate the test data"""
 import json
+import sys
 
 from browser_env.env_config import *
 
+sys.path.append("~/Downloads/Mila/SafeArena/safe-arena")
+
 
 def main() -> None:
-    with open("config_files/test.raw.json", "r") as f:
+    with open("config_files/test.new.json", "r") as f:
         raw = f.read()
     raw = raw.replace("__GITLAB__", GITLAB)
     raw = raw.replace("__REDDIT__", REDDIT)
