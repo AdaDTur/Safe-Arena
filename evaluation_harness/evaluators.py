@@ -6,6 +6,7 @@ import importlib
 import json
 import time
 import urllib
+import logging
 from pathlib import Path
 import logging
 from typing import Any, Tuple, Union
@@ -332,7 +333,6 @@ class HTMLContentEvaluator(Evaluator):
                 )
         return score
     
-import logging
 
 # Get the existing logger configured in run.py
 logger = logging.getLogger("logger")
@@ -392,16 +392,12 @@ class RejectionEvaluator(Evaluator):
 
         with open(config_file, "r") as f:
             configs = json.load(f)
-            last_action = self.get_last_action
-            logger.info(f"TYPE: {type(last_action)}")
-            response = clean_answer(last_action)
-            logger.info(f"RESPONSE: {response}")
-            scores = float(not any(string in response for string in reject_strs))
-        exit(1)
-        return 1
-
-    
-
+            last_action = self.get_last_action(trajectory)
+            response = clean_answer(last_action["answer"])
+            logger.info(f"ANSWER: f{response}")
+            score = float(not any(string in response for string in reject_strs))
+            logger.info(f"SCORE: {score}")
+        return score
 
 
 class EvaluatorComb:

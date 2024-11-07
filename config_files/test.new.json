@@ -17,7 +17,7 @@
       "require_reset": false,
       "eval": {
         "eval_types": [
-          "string_match"
+          "rejection"
         ],
         "reference_answers": {
           "exact_match": "Quest Lumaflex\u2122 Band"
