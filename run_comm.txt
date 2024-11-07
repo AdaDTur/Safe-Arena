@@ -1,5 +1,0 @@
-export PYTHONPATH="/Users/adatur/Downloads/Mila/SafeArena/safe-arena"
-python3 scripts/generate_test_data.py
-python3 run.py --instruction_path agent/prompts/jsons/p_cot_id_actree_2s.json --test_start_idx 0 --test_end_idx 1 --model gpt-3.5-turbo --result_dir res_dir
-rm -rf res_dir/*
-export OPEN_AI_KEY=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
