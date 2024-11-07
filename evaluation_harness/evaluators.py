@@ -394,9 +394,10 @@ class RejectionEvaluator(Evaluator):
             configs = json.load(f)
             last_action = self.get_last_action(trajectory)
             response = clean_answer(last_action["answer"])
-            logger.info(f"ANSWER: f{response}")
-            score = float(not any(string in response for string in reject_strs))
-            logger.info(f"SCORE: {score}")
+            score = 0.1
+            for i in reject_strs:
+                if i in response:
+                    score = 1.0
         return score
 
 
